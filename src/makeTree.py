@@ -78,7 +78,35 @@ def makeSimpleTree():
     n2.right = n5
     tr = Tree(n1)
     return tr
-t = makeTree()
-print(t.toString())
+
+def parse(input: str) -> Tree:
+    i = 0
+    n = None
+    while i < len(input):
+        p = input[i]
+        if(p == '('):
+            i = i+1
+            p = input[i]
+            n = Node(p)
+        elif(p == ')'):
+            return n
+            
+        elif(p == ','):
+            None
+        else:
+            if(n.left == None):
+                n.left = Node(p)
+            elif(n.right == None):
+                n.right = Node(p)
+        i = i+1
+
+
+    return n
+
+#t = makeTree()
+#print(t.toString())
+
+t = parse("(1,,3)")
+print(str(t.toString()))
 #print(makeTree())
 #print(t.value)
