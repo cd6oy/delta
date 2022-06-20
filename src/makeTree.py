@@ -106,7 +106,9 @@ def parse(input: str) -> Tree:
 #t = makeTree()
 #print(t.toString())
 
-t = parse("(1,,3)")
+t = parse("(a,b,c)")
 print(str(t.toString()))
+t1 = parse("a")
+print(str(t1.toString()))
 #print(makeTree())
 #print(t.value)
