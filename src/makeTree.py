@@ -94,7 +94,9 @@ def parse(input: str) -> Tree:
         elif(p == ','):
             None
         else:
-            if(n.left == None):
+            if n == None:
+                n = Node(p)
+            elif(n.left == None):
                 n.left = Node(p)
             elif(n.right == None):
                 n.right = Node(p)
