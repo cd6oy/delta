@@ -89,7 +89,7 @@ def parse(input: str) -> Tree:
             p = input[i]
             n = Node(p)
         elif(p == ')'):
-            return n
+            return Tree(n)
             
         elif(p == ','):
             None
@@ -101,14 +101,16 @@ def parse(input: str) -> Tree:
         i = i+1
 
 
-    return n
+    return Tree(n)
 
 #t = makeTree()
 #print(t.toString())
 
 t = parse("(a,b,c)")
 print(str(t.toString()))
-t1 = parse("a")
+t1 = parse("(a)")
 print(str(t1.toString()))
+t2 = parse("a")
+print(str(t2.toString()))
 #print(makeTree())
 #print(t.value)
