@@ -94,8 +94,10 @@ def parse(input: str) -> Tree:
         elif(p == ','):
             None
         else:
-            if n == None:
+            if(n == None):
                 n = Node(p)
+            #elif(input[i+1] != ','):
+             #   list = list + p
             elif(n.left == None):
                 n.left = Node(p)
             elif(n.right == None):
@@ -107,14 +109,12 @@ def parse(input: str) -> Tree:
 
 #t = makeTree()
 #print(t.toString())
-
-t = parse("(a,b,c)")
-print(str(t.toString()))
-t1 = parse("(a)")
-print(str(t1.toString()))
-t2 = parse("a")
-print(str(t2.toString()))
-t2 = parse("(abc,d,e)")
-print(str(t1.toString()))
+def parseWithTest(testcase: str):
+    t = parse(testcase)
+    print(str(testcase + "=>" + t.toString()))
+parseWithTest("(a,b,c)")
+parseWithTest("(a)")
+parseWithTest("a")
+parseWithTest("(abc,d,e)")
 #print(makeTree())
 #print(t.value)
