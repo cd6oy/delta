@@ -85,17 +85,22 @@ def parse(input: str) -> Tree:
     while i < len(input):
         p = input[i]
         if(p == '('):
-            i = i+1
+            #i = i+1
             p = input[i]
-            n = Node(p)
+            n = Node(None)
         elif(p == ')'):
             return Tree(n)
             
         elif(p == ','):
             None
         else:
+            # start
+            list = 'abc'
+            #end
             if(n == None):
                 n = Node(p)
+            elif(n.value == None):
+                n.value = p
             #elif(input[i+1] != ','):
              #   list = list + p
             elif(n.left == None):
