@@ -88,6 +88,8 @@ def parse(input: str) -> Tree:
             #i = i+1
             p = input[i]
             n = Node(None)
+        #elif(i+1 == None):
+         #   return p
         elif(p == ')'):
             return Tree(n)
             
@@ -95,18 +97,23 @@ def parse(input: str) -> Tree:
             None
         else:
             # start
-            list = 'abc'
+            list = ''
+            while i < len(input) and input[i] not in ['(', ',', ')']:
+                #print(list)
+                list = list + input[i]
+                i = i+1
+            i -= 1
             #end
             if(n == None):
-                n = Node(p)
+                n = Node(list)
             elif(n.value == None):
-                n.value = p
-            #elif(input[i+1] != ','):
+                n.value = list
+            #elif(input[i+1] ! ','):
              #   list = list + p
             elif(n.left == None):
-                n.left = Node(p)
+                n.left = Node(list)
             elif(n.right == None):
-                n.right = Node(p)
+                n.right = Node(list)
         i = i+1
 
 
@@ -120,6 +127,8 @@ def parseWithTest(testcase: str):
 parseWithTest("(a,b,c)")
 parseWithTest("(a)")
 parseWithTest("a")
+parseWithTest("(abc)")
 parseWithTest("(abc,d,e)")
+parseWithTest("(abc,def,ghi)")
 #print(makeTree())
 #print(t.value)
