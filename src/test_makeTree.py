@@ -1,11 +1,15 @@
 import makeTree
 
+def parseWithTest(testcase: str) -> str:
+    t = makeTree.parse(testcase)
+    return t.toString()
+    #print(str(testcase + "=>" + t.toString()))
 # example = makeTree.parse()
 
 def test_parse_c1():
-    assert makeTree.parse('(a,b,c)') == [('(a, b, c)')]
+    assert parseWithTest('(a,b,c)') == '(a, b, c)'
 #def test_parse_c2():
- #   assert example.parse('(a)') == [('a')]
+ #   assert example.parse('(a)') == 'a'
 # def test_parse_c3():
 """     assert example.parse('a') == [('a')]
 def test_parse_c4():
