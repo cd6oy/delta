@@ -118,17 +118,3 @@ def parse(input: str) -> Tree:
 
 
     return Tree(n)
-
-#t = makeTree()
-#print(t.toString())
-def parseWithTest(testcase: str):
-    t = parse(testcase)
-    print(str(testcase + "=>" + t.toString()))
-parseWithTest("(a,b,c)")
-parseWithTest("(a)")
-parseWithTest("a")
-parseWithTest("(abc)")
-parseWithTest("(abc,d,e)")
-parseWithTest("(abc,def,ghi)")
-#print(makeTree())
-#print(t.value)
