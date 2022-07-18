@@ -1,4 +1,4 @@
-from ast import Global
+from ast import Delete, Global
 
 
 class Node:
@@ -95,10 +95,12 @@ def parse(input: str) -> Tree:
             
         elif(p == ','):
             None
+        elif(p == ' '):
+            None
         else:
             # start
             list = ''
-            while i < len(input) and input[i] not in ['(', ',', ')']:
+            while i < len(input) and input[i] not in ['(', ',', ')', ' ']:
                 #print(list)
                 list = list + input[i]
                 i = i+1
