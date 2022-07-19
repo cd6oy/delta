@@ -12,12 +12,12 @@ class Node:
         else:
             r = '('
             r = r+ str(self.value)
-            r = r+ ', '
+            r = r+ ' '
             if self.left != None:  
                 r = r+str(self.left.toString())
             else:
                 r = r+ str('')
-            r = r+', '
+            r = r+' '
             if self.right != None:
                 r = r+str(self.right.toString())
             else:
@@ -92,15 +92,12 @@ def parse(input: str) -> Tree:
          #   return p
         elif(p == ')'):
             return Tree(n)
-            
-        elif(p == ','):
-            None
         elif(p == ' '):
             None
         else:
             # start
             list = ''
-            while i < len(input) and input[i] not in ['(', ',', ')', ' ']:
+            while i < len(input) and input[i] not in ['(', ')', ' ']:
                 #print(list)
                 list = list + input[i]
                 i = i+1
