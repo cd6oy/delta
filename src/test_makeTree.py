@@ -20,3 +20,5 @@ def test_parse_c5():
 def test_parse_c6():
     assert parseWithTest('( abc       def  ghi   )') == '(abc, def, ghi)'
 """
+def test_tokenizer_c1():
+    assert makeTree.tokenizer("( ab c d)", 0) == 1

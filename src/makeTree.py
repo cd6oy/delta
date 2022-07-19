@@ -1,4 +1,4 @@
-from ast import Delete, Global
+
 
 
 class Node:
@@ -79,6 +79,19 @@ def makeSimpleTree():
     tr = Tree(n1)
     return tr
 
+
+def tokenizer(input: str, start):
+    p = start
+    while p != len(input):
+        if(p == '(' or ')' or ' ' and p == start):
+            return p+1
+        elif(p == '(' or ')' or ' ' and p != start):
+            return p
+        else:
+            p += p
+    
+
+
 def parse(input: str) -> Tree:
     i = 0
     n = None
@@ -98,7 +111,6 @@ def parse(input: str) -> Tree:
             # start
             list = ''
             while i < len(input) and input[i] not in ['(', ')', ' ']:
-                #print(list)
                 list = list + input[i]
                 i = i+1
             i -= 1
