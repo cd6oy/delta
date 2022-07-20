@@ -22,3 +22,20 @@ def test_parse_c6():
 """
 def test_tokenizer_c1():
     assert makeTree.tokenizer("( ab c d)", 0) == 1
+def test_tokenizer_c2():
+    assert makeTree.tokenizer("( ab c d)", 1) == 2
+def test_tokenizer_c3():
+    assert makeTree.tokenizer("( ab c d)", 4) == 5
+def test_tokenizer_c4():
+    assert makeTree.tokenizer("( ab c d)", 5) == 6
+def test_tokenizer_c5():
+    assert makeTree.tokenizer("( ab c d)", 6) == 7
+def test_tokenizer_c6():
+    assert makeTree.tokenizer("( ab c d)", 7) == 8
+def test_tokenizer_c7():
+    assert makeTree.tokenizer("( ab c d)", 8) == 9
+
+
+
+
+
