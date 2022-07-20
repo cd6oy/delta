@@ -1,8 +1,6 @@
-import tkinter as TK
 import random
 import turtle as t
 
-TK()
 #create caterpillar
 t.bgcolor('yellow')
 caterpillar = t.Turtle()
