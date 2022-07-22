@@ -83,12 +83,13 @@ def makeSimpleTree():
 def tokenizer(input: str, start):
     p = start
     while p != len(input):
-        if(p == '(' or ')' or ' ' and p == start):
+        if(input[p] in ['(', ')', ' '] and p == start):
             return p+1
-        elif(p == '(' or ')' or ' ' and p != start):
+        elif(input[p] in ['(', ')', ' '] and p != start):
+            print(p)
             return p
         else:
-            p += p
+            p += 1
     
 
 
