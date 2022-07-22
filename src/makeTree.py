@@ -2,7 +2,7 @@
 
 
 class Node:
-    def __init__(self, value: int):
+    def __init__(self, value: str):
         self.value = value
         self.left = None
         self.right = None
@@ -97,36 +97,33 @@ def parse(input: str) -> Tree:
     i = 0
     n = None
     while i < len(input):
-        p = input[i]
-        if(p == '('):
+        end = tokenizer(input, i)
+        word = input[i: end]
+        if(word == '('):
             #i = i+1
-            p = input[i]
+            word = input[i: end]
+            #print('WORD:' + word)
+            #print('INPUT[I: END]: ' + input[i: end])
             n = Node(None)
         #elif(i+1 == None):
          #   return p
-        elif(p == ')'):
+        elif(word == ')'):
             return Tree(n)
-        elif(p == ' '):
+        elif(word == ' '):
             None
+    
         else:
-            # start
-            list = ''
-            while i < len(input) and input[i] not in ['(', ')', ' ']:
-                list = list + input[i]
-                i = i+1
-            i -= 1
-            #end
             if(n == None):
-                n = Node(list)
+                n = Node(word)
             elif(n.value == None):
-                n.value = list
+                n.value = word
             #elif(input[i+1] ! ','):
              #   list = list + p
             elif(n.left == None):
-                n.left = Node(list)
+                n.left = Node(word)
             elif(n.right == None):
-                n.right = Node(list)
-        i = i+1
+                n.right = Node(word)
+        i = end
 
 
     return Tree(n)

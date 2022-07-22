@@ -8,18 +8,18 @@ def parseWithTest(testcase: str) -> str:
 
 def test_parse_c1():
     assert parseWithTest('(a b c)') == '(a b c)'
-"""
+
 def test_parse_c2():
     assert parseWithTest('( a   )') == 'a'
 def test_parse_c3():
     assert parseWithTest('     a   ') == 'a'
 def test_parse_c4():
-    assert parseWithTest('(   a b  c                     )') == '(a, b, c)'
+    assert parseWithTest('(   a b  c                     )') == '(a b c)'
 def test_parse_c5():
-    assert parseWithTest('( abc      d  e  )') == '(abc, d, e)'
+    assert parseWithTest('( abc             d   e)') == '(abc d e)'
 def test_parse_c6():
-    assert parseWithTest('( abc       def  ghi   )') == '(abc, def, ghi)'
-"""
+    assert parseWithTest('( abc       def  ghi   )') == '(abc def ghi)'
+
 def test_tokenizer_c1():
     assert makeTree.tokenizer("( ab c d)", 0) == 1
 def test_tokenizer_c2():
