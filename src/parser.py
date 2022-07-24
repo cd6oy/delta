@@ -9,13 +9,7 @@ def parse(input: str) -> Tree:
         end = tokenizer(input, i)
         word = input[i: end]
         if(word == '('):
-            #i = i+1
-            word = input[i: end]
-            #print('WORD:' + word)
-            #print('INPUT[I: END]: ' + input[i: end])
             n = Node(None)
-        #elif(i+1 == None):
-         #   return p
         elif(word == ')'):
             return Tree(n)
         elif(word == ' '):
@@ -26,10 +20,9 @@ def parse(input: str) -> Tree:
                 n = Node(word)
             elif(n.value == None):
                 n.value = word
-            #elif(input[i+1] ! ','):
-             #   list = list + p
             elif(n.left == None):
                 n.left = Node(word)
             elif(n.right == None):
                 n.right = Node(word)
         i = end
+    return n

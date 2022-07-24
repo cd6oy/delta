@@ -4,7 +4,7 @@ def tokenizer(input: str, start):
         if(input[p] in ['(', ')', ' '] and p == start):
             return p+1
         elif(input[p] in ['(', ')', ' '] and p != start):
-            print(p)
+            #print(p)
             return p
         else:
             p += 1
