@@ -1,5 +1,5 @@
 from tokenizer import tokenizer
-from tree import Node
+from node import Node
 
 def parse(input: str) -> Node:
     i = 0
