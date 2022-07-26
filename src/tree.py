@@ -22,31 +22,3 @@ class Node:
             r = r+')'
         return r
 
-
-class Tree:
-    def __init__(self, value: Node):
-        self.root = value
-    def toString(self):
-        r = self.root.toString()
-        return r
-    def print(self):
-        string = []
-        p = self.root
-        q = self.root
-        while p != None and q != None:
-            if q != p:
-                string.append(str(p.value))
-                string.append(str(q.value))
-                p = p.left
-                q = q.right
-            else:
-                string.append(str(p.value))
-                p = p.left
-                q = q.right
-        ', '.join(string)
-        return string.value
-
-
-
-
-

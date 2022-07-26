@@ -1,8 +1,7 @@
 from tokenizer import tokenizer
-from tree import Tree
 from tree import Node
 
-def parse(input: str) -> Tree:
+def parse(input: str) -> Node:
     i = 0
     n = None
     while i < len(input):
@@ -11,7 +10,7 @@ def parse(input: str) -> Tree:
         if(word == '('):
             n = Node(None)
         elif(word == ')'):
-            return Tree(n)
+            return n
         elif(word == ' '):
             None
     
