@@ -4,12 +4,23 @@ from node import Node
 
 
 def evaluate(n: Node) -> Node:
+    if(n == None):
+        return Node(None)
+    leftVal = evaluate(n.left).value
+    rightVal = evaluate(n.right).value
     if(n.value in ['plus', '+']):
-        result = int(n.left.value) + int(n.right.value)
+        result = Node(leftVal + rightVal)
     elif(n.value in ['minus', '-']):
-        result = int(n.left.value) - int(n.right.value)
+        result = Node(leftVal - rightVal)
     elif(n.value in ['multiply', '*', 'x']):
-        result = int(n.left.value) * int(n.right.value)
+        result = Node(leftVal * rightVal)
     elif(n.value in ['divide', '/']):
-        result = int(n.left.value) / int(n.right.value)
-    return Node(int(result))
+        result = Node(int(leftVal / rightVal))
+    else:
+        if(str(n.value).isnumeric() == False):
+            raise TypeError("Only integers are allowed")
+
+        else:
+            result = Node(int(n.value))
+   
+    return result
