@@ -20,6 +20,9 @@ def test_parse_c5():
     assert parseWithTest('( abc             d   e)') == '(abc d e)'
 def test_parse_c6():
     assert parseWithTest('( abc       def  ghi   )') == '(abc def ghi)'
+def test_parse_c7():
+    assert parseWithTest('( abc       (d e f)  ghi   )') == '( abc       (d e f)  ghi   )'
+
 
 
 

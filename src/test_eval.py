@@ -40,6 +40,11 @@ def test_eval_c9():
 
 def test_eval_c10():
     assert parseAndEval('(/ 6 3)') == '2'
+
+#def test_eval_c11():
+ #   t = parser.parse('(+ (- 5 3) 4)')
+  #  print(t.toString())
+   # assert parseAndEval('(+ (- 5 3) 4)') == '6'
  
 #if __name__ == '__main__': 
  #   unittest.main()
