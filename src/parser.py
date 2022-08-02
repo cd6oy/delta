@@ -1,8 +1,8 @@
 from tokenizer import tokenizer
 from node import Node
 
-def parse(input: str) -> Node:
-    i = 0
+def parseTree(input: str, startPos) -> Node:
+    i = startPos
     n = None
     while i < len(input):
         end = tokenizer(input, i)
@@ -25,3 +25,6 @@ def parse(input: str) -> Node:
                 n.right = Node(word)
         i = end
     return n
+
+def parser(testcase: str):
+    return parseTree(testcase, 0)

@@ -1,7 +1,7 @@
 import parser
 
 def parseWithTest(testcase: str) -> str:
-    t = parser.parse(testcase)
+    t = parser.parser(testcase)
     assert t != None
     return t.toString()
     #print(str(testcase + "=>" + t.toString()))
