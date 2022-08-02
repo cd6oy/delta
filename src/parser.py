@@ -11,7 +11,15 @@ def parseTree(input: str, startPos) -> Node and int:
             if(n == None):
                 n = Node(None)
             else:
-                nextNode = parseTree(str, i)
+                result = parseTree(input, i)
+                node = result[0]
+                i = result[1]
+                print(result[1])
+                if (n.left == None):
+                    n.left = node
+                elif (n.right == None):
+                    n.right = node
+                
         elif(word == ')'):
             return n, i
         elif(word == ' '):
