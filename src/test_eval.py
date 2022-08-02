@@ -3,7 +3,7 @@ import parser
 import unittest
 
 def parseAndEval(s: str) -> str:
-    t = parser.parse(s)
+    t = parser.parser(s)
     result = eval.evaluate(t)
     return result.toString()
 

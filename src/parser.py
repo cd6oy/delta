@@ -19,7 +19,7 @@ def parseTree(input: str, startPos) -> Node and int:
                     n.left = node
                 elif (n.right == None):
                     n.right = node
-                
+                end = 18+1
         elif(word == ')'):
             return n, i
         elif(word == ' '):
