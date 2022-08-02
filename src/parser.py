@@ -1,16 +1,19 @@
 from tokenizer import tokenizer
 from node import Node
 
-def parseTree(input: str, startPos) -> Node:
+def parseTree(input: str, startPos) -> Node and int:
     i = startPos
     n = None
     while i < len(input):
         end = tokenizer(input, i)
         word = input[i: end]
         if(word == '('):
-            n = Node(None)
+            if(n == None):
+                n = Node(None)
+            else:
+                nextNode = parseTree(str, i)
         elif(word == ')'):
-            return n
+            return n, i
         elif(word == ' '):
             None
     
@@ -24,7 +27,7 @@ def parseTree(input: str, startPos) -> Node:
             elif(n.right == None):
                 n.right = Node(word)
         i = end
-    return n
+    return n, i
 
 def parser(testcase: str):
-    return parseTree(testcase, 0)
+    return parseTree(testcase, 0)[0]
