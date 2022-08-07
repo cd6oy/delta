@@ -6,13 +6,17 @@ from node import Unit
 def evaluate(n: Unit) -> Unit:
     if(n == None):
         return Unit(None)
-    left = evaluate(n.args[0])
-    right = evaluate(n.args[1])
-    print("LEFT: " + left.toString())
-    print('RIGHT: ' + right.toString())
-    print('nVal: ' + n.toString())
-    leftVal = left.value
-    rightVal = right.value
+    leftVal = None
+    rightVal = None
+    #print('nVal: ' + n.toString())
+    if(len(n.args) > 0):
+        left = evaluate(n.args[0])
+        leftVal = left.value 
+    if(len(n.args) > 1):
+        right = evaluate(n.args[1])
+        rightVal = right.value
+    #print("LEFT: " + leftVal)
+    #print('RIGHT: ' + rightVal)
     if(n.value in ['plus', '+']):
         result = Unit(leftVal + rightVal)
     elif(n.value in ['minus', '-']):

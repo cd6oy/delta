@@ -14,7 +14,7 @@ def parseTree(input: str, startPos) -> Unit and int:
                 result = parseTree(input, i)
                 unit = result[0]
                 i = result[1]
-                print(result[1])
+                #print(result[1])
                 n.args.append(unit)
                 end = i+1
         elif(word == ')'):
@@ -28,7 +28,7 @@ def parseTree(input: str, startPos) -> Unit and int:
             elif(n.value == None):
                 n.value = word
             else:
-                print(Unit(word).value)
+                #print(Unit(word).value)
                 n.args.append(Unit(word))
         i = end
     return n, i

@@ -29,7 +29,7 @@ class Unit:
         self.value = value
         self.args = list[Unit]()
     def toString(self):
-        if len(self.args) > 1 and len(self.args) == 2:
+        if len(self.args) == 0:
             r = str(self.value)
         else:
             r = '('
