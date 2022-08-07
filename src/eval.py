@@ -1,32 +1,32 @@
-from node import Node
+from node import Unit
 
 
 
 
-def evaluate(n: Node) -> Node:
+def evaluate(n: Unit) -> Unit:
     if(n == None):
-        return Node(None)
-    left = evaluate(n.left)
-    right = evaluate(n.right)
+        return Unit(None)
+    left = evaluate(n.args[0])
+    right = evaluate(n.args[1])
     print("LEFT: " + left.toString())
     print('RIGHT: ' + right.toString())
     print('nVal: ' + n.toString())
     leftVal = left.value
     rightVal = right.value
     if(n.value in ['plus', '+']):
-        result = Node(leftVal + rightVal)
+        result = Unit(leftVal + rightVal)
     elif(n.value in ['minus', '-']):
-        result = Node(leftVal - rightVal)
+        result = Unit(leftVal - rightVal)
         print('RESULT: ' + result.toString())
     elif(n.value in ['multiply', '*', 'x']):
-        result = Node(leftVal * rightVal)
+        result = Unit(leftVal * rightVal)
     elif(n.value in ['divide', '/']):
-        result = Node(int(leftVal / rightVal))
+        result = Unit(int(leftVal / rightVal))
     else:
         if(str(n.value).isnumeric() == False):
             raise TypeError("Only integers are allowed")
 
         else:
-            result = Node(int(n.value))
+            result = Unit(int(n.value))
     #print(result.value)
     return result

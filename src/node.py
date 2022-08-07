@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Node:
     def __init__(self, value: str):
         self.value = value
@@ -21,4 +24,25 @@ class Node:
                 r = r+str('')
             r = r+')'
         return r
-
+class Unit:
+    def __init__(self, value: str):
+        self.value = value
+        self.args = list[Unit]()
+    def toString(self):
+        if len(self.args) > 1 and len(self.args) == 2:
+            r = str(self.value)
+        else:
+            r = '('
+            r = r+ str(self.value)
+            r = r+ ' '
+            if self.args[0] != None:  
+                r = r+str(self.args[0].toString())
+            else:
+                r = r+ str('')
+            r = r+' '
+            if self.args[1] != None:
+                r = r+str(self.args[1].toString())
+            else:
+                r = r+str('')
+            r = r+')'
+        return r
