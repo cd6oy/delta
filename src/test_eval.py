@@ -50,7 +50,6 @@ def test_eval_c12():
 def test_eval_c12():
     assert parseAndEval('(- (+ (+ 2 1) 4) (+ 5 6))') == '-4'
 
-    assert parseAndEval('(+)')
   
 #if __name__ == '__main__': 
  #   unittest.main()
