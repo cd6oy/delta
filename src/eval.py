@@ -7,23 +7,15 @@ def evaluate(n: Unit) -> Unit:
     if(n == None):
         return Unit(None)
 
-    #print("LEFT: " + leftVal)
-    #print('RIGHT: ' + rightVal)
     if(n.value in ['plus', '+']):
-        leftVal = None
-        rightVal = None
-        #print('nVal: ' + n.toString())
-        if(len(n.args) > 0):
-            left = evaluate(n.args[0])
-            leftVal = left.value 
-        if(len(n.args) > 1):
-            right = evaluate(n.args[1])
-            rightVal = right.value
-        result = Unit(leftVal + rightVal)
+        resArr = []
+        for arg in n.args:
+            resUnit = evaluate(arg)
+            resArr.append(resUnit.value)
+        result = Unit(sum(resArr))
     elif(n.value in ['minus', '-']):
         leftVal = None
         rightVal = None
-        #print('nVal: ' + n.toString())
         if(len(n.args) > 0):
             left = evaluate(n.args[0])
             leftVal = left.value 
