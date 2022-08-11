@@ -32,17 +32,14 @@ class Unit:
         if len(self.args) == 0:
             r = str(self.value)
         else:
-            r = '('
+            r = '( '
             r = r+ str(self.value)
             r = r+ ' '
-            if self.args[0] != None:  
-                r = r+str(self.args[0].toString())
-            else:
-                r = r+ str('')
-            r = r+' '
-            if self.args[1] != None:
-                r = r+str(self.args[1].toString())
-            else:
-                r = r+str('')
+            for arg in self.args:
+                if arg!= None:  
+                    r = r+str(arg.toString())
+                else:
+                    r = r+ str('')
+                r = r+ ' '
             r = r+')'
         return r
