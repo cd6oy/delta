@@ -1,3 +1,4 @@
+import func
 from node import Unit
 
 
@@ -8,11 +9,7 @@ def evaluate(n: Unit) -> Unit:
         return Unit(None)
 
     if(n.value in ['plus', '+']):
-        resArr = []
-        for arg in n.args:
-            resUnit = evaluate(arg)
-            resArr.append(resUnit.value)
-        result = Unit(sum(resArr))
+        result = func.add(n.args)
     elif(n.value in ['minus', '-']):
         leftVal = None
         rightVal = None
