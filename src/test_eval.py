@@ -47,10 +47,10 @@ def test_eval_c11():
 def test_eval_c12():
     assert parseAndEval('(- (+ (+ 2 1) 4) (+ 1 4))') == '2'
 
-def test_eval_c12():
+def test_eval_c13():
     assert parseAndEval('(- (+ (+ 2 1) 4) (+ 5 6))') == '-4'
 
-def test_eval_c13():
+def test_eval_c14():
     assert parseAndEval('(+ 1 2 3)') == '6'
   
 #if __name__ == '__main__': 
