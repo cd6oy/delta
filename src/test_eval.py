@@ -52,6 +52,9 @@ def test_eval_c13():
 
 def test_eval_c14():
     assert parseAndEval('(+ 1 2 3)') == '6'
+
+def test_seq_c1():
+    assert parseAndEval('(seq (+ 1 2) (+ 3 4) (+ 5 6))') == '11'
   
 #if __name__ == '__main__': 
  #   unittest.main()

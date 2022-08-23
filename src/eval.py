@@ -16,6 +16,12 @@ def evaluate(n: Unit) -> Unit:
         result = func.multiplacation(n.args)
     elif(n.value in ['divide', '/']):
         result = func.divition(n.args)
+    elif(n.value in ['seq']):
+        l = []
+        for arg in n.args:
+            lu = evaluate(arg)
+            l.append(lu)
+        result = l[len(l)-1]
     else:
         if(str(n.value).isnumeric() == False):
             raise TypeError("Only integers are allowed!")
