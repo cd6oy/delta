@@ -34,3 +34,11 @@ def divition(args: list[Unit]):
     rightVal = eval.evaluate(args[1]).value
     result = Unit(int(leftVal / rightVal))
     return result
+
+def sequence(args: list[Unit]):
+    l = []
+    for arg in args:
+        lu = eval.evaluate(arg)
+        l.append(lu)
+    result = l[len(l)-1]
+    return result
