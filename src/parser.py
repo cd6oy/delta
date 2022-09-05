@@ -4,7 +4,6 @@ from node import Unit
 def parseTree(input: str, startPos) -> Unit and int:
     i = startPos
     n = None
-    print(len(input)-1)
     while i < len(input):
         print('iVal: ' + input[i])
         end = tokenizer(input, i)
@@ -32,10 +31,6 @@ def parseTree(input: str, startPos) -> Unit and int:
             else:
                 #print(Unit(word).value)
                 n.args.append(Unit(word))
-                print('UNIT(WORD)\'S VALUE:')
-                print(Unit(word).value)
-                print('n.value: ')
-                print(n.value)
         i = end
     return n, i
 
