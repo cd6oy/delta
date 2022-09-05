@@ -1,10 +1,12 @@
 import eval
 import parser
 import unittest
+from node import Unit
 
 def parseAndEval(s: str) -> str:
+    ctx: dict[str, Unit] = {}
     t = parser.parser(s)
-    result = eval.evaluate(t)
+    result = eval.evaluate(t, ctx)
     return result.toString()
 
 class testEval(unittest.TestCase):
@@ -55,6 +57,16 @@ def test_eval_c14():
 
 def test_seq_c1():
     assert parseAndEval('(seq (+ 1 2) (+ 3 4) (+ 5 6))') == '11'
+
+def test_val_c1():
+    assert parseAndEval('( seq ( val x 1) ( plus x 3 ) )') == '4'
+
+def test_val_c2():
+    assert parseAndEval('( seq (val a 1) a)') == '1' 
+
+def test_val_c3():
+    assert parseAndEval('( seq (val a "ab") a )') == '"ab"'
+
   
 #if __name__ == '__main__': 
  #   unittest.main()

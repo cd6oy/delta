@@ -1,4 +1,5 @@
 from typing import List
+from unittest import result
 
 
 class Node:
@@ -43,3 +44,9 @@ class Unit:
                 r = r+ ' '
             r = r+')'
         return r
+    def isNumber(self) -> bool:
+        strVal = str(self.value)
+        return strVal.isnumeric()
+    def isString(self) -> bool:
+        strVal = str(self.value)
+        return strVal.startswith('"') and strVal.endswith('"')
