@@ -12,7 +12,7 @@ def addtion(args: list[Unit], ctx: dict[str, Unit]):
 
 def subtraction(args: list[Unit], ctx: dict[str, Unit]):
     if(len(args) != 2):
-        raise TypeError("List contains more than 2 values!")
+        raise TypeError("List should have 2 values!")
     leftVal = eval.evaluate(args[0], ctx).value 
     rightVal = eval.evaluate(args[1], ctx).value
     result = Unit(leftVal - rightVal)
@@ -29,7 +29,7 @@ def multiplacation(args: list[Unit], ctx: dict[str, Unit]):
 
 def divition(args: list[Unit], ctx: dict[str, Unit]):
     if(len(args) != 2):
-        raise TypeError("List contains more than 2 values!")
+        raise TypeError("List should have 2 values!")
     leftVal = eval.evaluate(args[0], ctx).value 
     rightVal = eval.evaluate(args[1], ctx).value
     result = Unit(int(leftVal / rightVal))
@@ -45,10 +45,17 @@ def sequence(args: list[Unit], ctx: dict[str, Unit]):
 
 def define(args: list[Unit], ctx: dict[str, Unit]):
     if(len(args) != 2):
-        raise TypeError('List contains more than 2 values!')
+        raise TypeError('List should have 2 values!')
     else:
         leftVal = args[0].value
         rightUnit = eval.evaluate(args[1], ctx)
         ctx[leftVal] = rightUnit
         result = rightUnit
         return result
+
+def length(args: list[Unit], ctx: dict[str, Unit]):
+    if(len(args) != 1):
+        raise TypeError("List should have 1 Value!")
+    unitVal = eval.evaluate(args[0], ctx).value
+    result = Unit(len(unitVal[1:-1]))
+    return result

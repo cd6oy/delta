@@ -21,6 +21,8 @@ def evaluate(n: Unit, ctx: dict[str, Unit]) -> Unit:
         result = func.sequence(n.args, ctx)
     elif(n.value in ['val']):
         result = func.define(n.args, ctx)
+    elif(n.value in ['len']):
+        result = func.length(n.args, ctx)
     else:
         if(n.isNumber() == True):
             result = Unit(int(n.value))

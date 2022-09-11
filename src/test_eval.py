@@ -67,6 +67,7 @@ def test_val_c2():
 def test_val_c3():
     assert parseAndEval('( seq (val a "ab") a )') == '"ab"'
 
+def test_len_c1():
+    assert parseAndEval('(len "ab")') == '2'
+
   
-#if __name__ == '__main__': 
- #   unittest.main()
