@@ -70,4 +70,7 @@ def test_val_c3():
 def test_len_c1():
     assert parseAndEval('(len "ab")') == '2'
 
+def test_con_c1():
+    assert parseAndEval('(con "ab" "cd")') == '"abcd"'
+
   

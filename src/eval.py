@@ -23,6 +23,10 @@ def evaluate(n: Unit, ctx: dict[str, Unit]) -> Unit:
         result = func.define(n.args, ctx)
     elif(n.value in ['len']):
         result = func.length(n.args, ctx)
+    elif(n.value in ['con']):
+        leftval = n.args[0].value
+        rightval = n.args[1].value
+        result = Unit(leftval + rightval)
     else:
         if(n.isNumber() == True):
             result = Unit(int(n.value))
