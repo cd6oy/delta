@@ -24,14 +24,14 @@ def evaluate(n: Unit, ctx: dict[str, Unit]) -> Unit:
     elif(n.value in ['len']):
         result = func.length(n.args, ctx)
     elif(n.value in ['con']):
-        leftval = n.args[0].value
-        rightval = n.args[1].value
+        leftval = evaluate(n.args[0], ctx).value
+        rightval = evaluate(n.args[1], ctx).value
         result = Unit(leftval + rightval)
     else:
         if(n.isNumber() == True):
             result = Unit(int(n.value))
         elif(n.isString()):
-            return n
+            result = Unit(n.value[1:-1])
         else:
             token = n.value
             if(token in ctx):

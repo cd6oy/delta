@@ -57,5 +57,5 @@ def length(args: list[Unit], ctx: dict[str, Unit]):
     if(len(args) != 1):
         raise TypeError("List should have 1 Value!")
     unitVal = eval.evaluate(args[0], ctx).value
-    result = Unit(len(unitVal[1:-1]))
+    result = Unit(len(unitVal))
     return result
