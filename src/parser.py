@@ -4,10 +4,12 @@ from node import Unit
 def parseTree(input: str, startPos) -> Unit and int:
     i = startPos
     n = None
+    print("Larry:", len(input))
     while i < len(input):
-        print('iVal: ' + input[i])
         end = tokenizer(input, i)
         word = input[i: end]
+        print('end:', end)
+        print('word:', word)
         if(word == '('):
             if(n == None):
                 n = Unit(None)
